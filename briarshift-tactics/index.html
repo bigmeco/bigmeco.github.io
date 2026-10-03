@@ -8,70 +8,104 @@
   <title>Briarshift Tactics — Privacy Policy</title>
   <style>
     :root {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #eaf8f7;
-      background: #071315;
+      color-scheme: dark;
+      --void: #0b171b;
+      --stone: #17242a;
+      --edge: #526064;
+      --moss: #40543c;
+      --text: #eaf0e8;
+      --body: #d2dcd3;
+      --muted: #a9b8b2;
+      --gold: #f2b33d;
+      font-family: Arial, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--void);
+      color: var(--text);
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at 15% 5%, rgba(34, 211, 238, .14), transparent 32rem),
-        linear-gradient(150deg, #0b1d20, #061012 65%);
+    body { margin: 0; border-top: 5px solid var(--moss); }
+    main { width: min(1120px, calc(100% - 64px)); margin: 0 auto; padding-bottom: 48px; }
+    a { color: var(--gold); text-underline-offset: .2em; overflow-wrap: anywhere; }
+    a:hover { color: #ffc65a; }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+    .skip-link { position: absolute; top: 12px; left: 16px; padding: 12px 16px; background: var(--stone); z-index: 2; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+    .masthead { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--edge); }
+    .brand-icon { display: block; width: 64px; height: 64px; }
+    .eyebrow { margin: 0; font-size: .75rem; line-height: 1.5; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; padding: 32px 0 40px; border-bottom: 1px solid var(--edge); }
+    .hero-copy { min-width: 0; padding: 18px 0; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 5.8vw, 5.3rem); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; overflow-wrap: anywhere; }
+    h1 span { display: block; color: var(--gold); }
+    h1 small { display: block; margin-top: 28px; font-family: Arial, ui-sans-serif, system-ui, sans-serif; font-size: .9rem; font-weight: 700; line-height: 1.5; letter-spacing: .13em; text-transform: uppercase; color: var(--text); }
+    .meta { margin: 18px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+    code { font-size: .91em; color: var(--text); overflow-wrap: anywhere; }
+    .language { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .language a { display: inline-flex; align-items: center; justify-content: center; min-width: 96px; min-height: 44px; padding: 10px 18px; border: 1px solid var(--edge); text-decoration: none; font-size: .9rem; font-weight: 700; }
+    .language a:hover { border-color: var(--gold); background: var(--stone); }
+    .world-art { width: 100%; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; }
+    .world-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+    article { max-width: 780px; margin: 64px auto 0; padding: 0; }
+    article + article { margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--edge); }
+    h2 { margin: 40px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: 1.6rem; line-height: 1.3; font-weight: 400; color: var(--text); }
+    article > h2:first-child { margin-top: 0; }
+    p, li { font-size: 1.0625rem; line-height: 1.8; color: var(--body); }
+    p { margin: 0 0 18px; }
+    strong { color: var(--text); }
+    ul { margin: 0; padding-left: 24px; }
+    li { margin-bottom: 12px; padding-left: 5px; }
+    li::marker { color: var(--gold); }
+    .notice { margin: 20px 0; padding: 22px 24px; border-left: 3px solid var(--gold); background: var(--stone); }
+    footer { max-width: 780px; margin: 56px auto 0; padding-top: 24px; border-top: 1px solid var(--edge); font-size: .85rem; line-height: 1.7; color: var(--muted); }
+    @media (max-width: 760px) {
+      main { width: calc(100% - 40px); }
+      .masthead { padding: 16px 0; gap: 12px; }
+      .brand-icon { width: 52px; height: 52px; }
+      .hero { grid-template-columns: 1fr; gap: 16px; padding: 28px 0 24px; }
+      .hero-copy { padding: 0; }
+      .world-art { max-width: 480px; margin: 0 auto; }
+      h1 { font-size: clamp(2.6rem, 10vw, 4.2rem); }
+      h1 small { margin-top: 20px; }
+      article { margin-top: 40px; }
+      article + article { margin-top: 48px; padding-top: 36px; }
+      h2 { font-size: 1.45rem; }
+      .notice { padding: 18px 20px; }
     }
-    main {
-      width: min(900px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 48px 0 72px;
+    @media print {
+      :root { color-scheme: light; background: white; color: #17242a; }
+      body { border: 0; }
+      main { width: 100%; padding: 0; }
+      .masthead, .world-art, .language, .skip-link { display: none; }
+      .hero { display: block; padding: 0 0 20px; }
+      h1 { font-size: 2.2rem; }
+      h1 span, h1 small, h2, p, li, strong, code, .meta, footer, a { color: #17242a; }
+      .notice { background: none; border-color: #526064; }
+      article, article + article { margin-top: 32px; }
+      h2 { break-after: avoid; }
+      li { break-inside: avoid; }
     }
-    header, article {
-      border: 1px solid rgba(103, 232, 249, .2);
-      border-radius: 20px;
-      background: rgba(7, 19, 21, .82);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
-    }
-    header { padding: clamp(28px, 6vw, 54px); }
-    article { margin-top: 24px; padding: clamp(24px, 5vw, 46px); }
-    .eyebrow {
-      margin: 0 0 10px;
-      color: #67e8f9;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    h1 { margin: 0; font-size: clamp(2.35rem, 7vw, 4.8rem); line-height: 1; letter-spacing: -.045em; }
-    h2 { margin: 32px 0 10px; color: #a5f3fc; font-size: 1.35rem; }
-    p, li { color: #c9dcdd; line-height: 1.7; }
-    strong, code { color: #f3ffff; }
-    code { font-size: .92em; overflow-wrap: anywhere; }
-    a { color: #67e8f9; overflow-wrap: anywhere; }
-    .meta { margin: 18px 0 0; color: #8eaaac; }
-    .language { display: flex; gap: 10px; margin-top: 22px; }
-    .language a {
-      padding: 8px 12px;
-      border: 1px solid rgba(103, 232, 249, .32);
-      border-radius: 999px;
-      text-decoration: none;
-    }
-    .notice {
-      padding: 16px 18px;
-      border-left: 3px solid #22d3ee;
-      background: rgba(34, 211, 238, .08);
-    }
-    footer { margin-top: 30px; color: #789092; text-align: center; font-size: .9rem; }
   </style>
 </head>
 <body>
+<a class="skip-link" href="#english">Skip to policy · К тексту политики</a>
 <main>
   <header>
-    <p class="eyebrow">Bigmeco · Android</p>
-    <h1>Briarshift Tactics<br>Privacy Policy</h1>
-    <p class="meta">Effective date: October 3, 2026 · Package: <code>com.bigmeco.puzzlecommandrpg</code></p>
-    <nav class="language" aria-label="Languages">
-      <a href="#english">English</a>
-      <a href="#russian">Русский</a>
-    </nav>
+    <div class="masthead">
+      <img class="brand-icon" src="assets/briarshift-icon.png" width="512" height="512" alt="">
+      <p class="eyebrow">Bigmeco · Android</p>
+    </div>
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>Briarshift <span>Tactics</span><small>Privacy Policy</small></h1>
+        <p class="meta">Effective date: October 3, 2026<br>Package: <code>com.bigmeco.puzzlecommandrpg</code></p>
+        <nav class="language" aria-label="Languages">
+          <a href="#english" hreflang="en">English</a>
+          <a href="#russian" hreflang="ru">Русский</a>
+        </nav>
+      </div>
+      <figure class="world-art" aria-hidden="true">
+        <img src="assets/briarshift-world.png" width="1024" height="500" alt="" fetchpriority="high">
+      </figure>
+    </div>
   </header>
 
   <article id="english" lang="en">
