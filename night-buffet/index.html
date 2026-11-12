@@ -17,7 +17,7 @@ nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}nav a{min-width:112px;m
 a{color:var(--red);text-underline-offset:3px;overflow-wrap:anywhere}a:hover{text-decoration-thickness:2px}a:focus-visible{outline:3px solid #d05d42;outline-offset:5px}
 main{max-width:900px}article{position:relative;padding:44px clamp(22px,6vw,64px) 52px;margin:0 0 40px;background:var(--paper);border:2px solid var(--edge);border-bottom:6px solid #c5a070;border-radius:12px 17px 13px 19px;box-shadow:0 5px 0 #38261555,0 20px 40px #21160e25;scroll-margin-top:24px;counter-reset:section}
 article:before{content:"";position:absolute;top:0;left:30px;right:30px;height:4px;background:repeating-linear-gradient(90deg,#a83d27 0 9px,transparent 9px 15px);opacity:.6}
-h2{font:600 clamp(1.65rem,4vw,2.25rem)/1.2 Georgia,serif;margin:0 0 14px;letter-spacing:-.03em;max-width:680px}
+h2{overflow-wrap:anywhere;font:600 clamp(1.65rem,4vw,2.25rem)/1.2 Georgia,serif;margin:0 0 14px;letter-spacing:-.03em;max-width:680px}
 article>p:first-of-type{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding-bottom:24px;margin-bottom:24px;border-bottom:1px dashed #c5a070}
 h3{font-size:1.13rem;line-height:1.4;margin:38px 0 12px;display:flex;gap:12px;align-items:baseline}h3:before{counter-increment:section;content:counter(section,decimal-leading-zero);font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--red);border:1px solid #c5a070;border-radius:5px;padding:3px 6px;flex:none}
 p{margin:12px 0;font-size:1rem}ul{padding-left:22px}li{margin:10px 0}li::marker{color:var(--red)}
