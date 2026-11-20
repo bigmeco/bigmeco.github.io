@@ -1,0 +1,185 @@
+@font-face {
+  font-family: Oswald;
+  src: url("oswald-semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --concrete: #22251f;
+  --surface: #292e25;
+  --paper: #e6dfcc;
+  --ink: #242821;
+  --muted-ink: #505748;
+  --line: #a5a68f;
+  --accent: #c1ca9e;
+  --accent-ink: #38432b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 84px, #fff1 84px 85px, transparent 85px 168px), var(--concrete);
+  font: 1rem/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.layout {
+  width: min(calc(100% - 2rem), 52rem);
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+}
+
+.door {
+  margin-bottom: 2.25rem;
+}
+
+.nameplate {
+  padding: clamp(1.25rem, 5vw, 2.75rem);
+  border: 1px solid #899273;
+  border-radius: 3px 13px 3px 3px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 5px #1c201a, 4px 5px 0 #151813;
+  color: #f6f2e5;
+}
+
+.brand, .product, .date { margin: 0; }
+
+.brand {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  overflow-wrap: anywhere;
+}
+
+.brand [aria-hidden] { padding-inline: 0.12em; }
+
+h1, h2, h3 {
+  font-family: Oswald, "Arial Narrow", "Segoe UI", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0.7rem 0 1rem;
+  font-size: clamp(2.2rem, 7vw, 4.25rem);
+}
+
+h1 span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #d5d6c3;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+.product {
+  color: #d5d6c3;
+  font-size: 0.9rem;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.1rem 0 0;
+}
+
+.languages a {
+  min-block-size: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #899273;
+  border-radius: 2px 8px 2px 2px;
+  background: #35402f;
+  color: #f3f2e3;
+  font-weight: 650;
+  text-decoration-thickness: 0.07em;
+}
+
+.languages a:hover { background: #45543b; }
+
+.notice {
+  scroll-margin-top: 1.25rem;
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(1.25rem, 5vw, 2.75rem);
+  border: 1px solid #aca891;
+  border-top: 6px solid #829265;
+  border-radius: 3px 14px 3px 3px;
+  box-shadow: 4px 5px 0 #151813;
+  overflow-wrap: anywhere;
+}
+
+.notice + .notice { margin-top: 2.25rem; }
+
+.date {
+  color: var(--muted-ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+h2 {
+  max-width: 25ch;
+  margin: 0.3rem 0 0.8rem;
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+}
+
+h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.notice section {
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.notice p:not(.date) {
+  max-width: 69ch;
+  margin: 0 0 0.8rem;
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+.notice a {
+  color: var(--accent-ink);
+  font-weight: 650;
+  text-underline-offset: 0.16em;
+}
+
+.notice a:hover { text-decoration-thickness: 0.13em; }
+
+.source { font-size: 0.9rem; }
+.source span { margin-inline: 0.15em; }
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.89em;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.notice:target {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 28rem) {
+  .layout { padding: 1.35rem 0 2.5rem; }
+  .door { margin-bottom: 1.5rem; }
+  .notice + .notice { margin-top: 1.25rem; }
+}
+
+@media print {
+  body, .nameplate, .notice { background: white; color: black; box-shadow: none; }
+  .layout { width: auto; padding: 0; }
+  .brand, .product, h1 span, .date { color: black; }
+  .languages { display: none; }
+  h2, h3 { break-after: avoid; }
+}
